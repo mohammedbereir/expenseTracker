@@ -100,7 +100,7 @@ void deleteTag(String id) {
 void _loadExpensesFromStorage() {
   var storedExpenses = storage.getItem('expenses');
   if (storedExpenses != null) {
-    final List<dynamic> decoded = jsonDecode(storedExpenses as String);
+    final List<dynamic> decoded = jsonDecode(storedExpenses);
     _expenses = decoded
         .map((item) => Expense.fromJson(Map<String, dynamic>.from(item)))
         .toList();
